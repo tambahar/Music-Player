@@ -1,0 +1,662 @@
+body {
+    background-color: #fff;
+    margin: 0;
+}
+
+
+header{
+    background-color: #F92922;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#add-span{
+    display: flex;
+    margin-left: 15px;
+    justify-content: flex-start;
+}
+
+#add-album{
+    display: flex;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+    border: none;
+    padding: 0 10px 0 3px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    height: 37px;
+    background: #F92922;
+    width: 170px;
+}
+
+#add-album p{
+    display: inline-block;
+    font-family: "Guttman Yad-Light";
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    top: 1px;
+}
+
+input[type="search"]{
+    font-family: "Guttman Yad-Light";
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    width: 174px;
+    height: 37px;
+    background-color: black;
+
+    border: none;
+    outline: none;
+}
+
+#search input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+#search{
+    background-color: black;
+    border-radius: 2px;
+    display: flex;
+    margin: 15px;
+    width: 210px;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-album:hover,
+#search:hover{
+    box-shadow: 0 0 6px;
+    transition: .4s;
+}
+
+#add-album:before{
+    font-family: FontAwesome, sans-serif;
+    content: "\f055";
+    color: #000;
+    margin: 0 4px;
+    font-size: 27px;
+}
+
+#search:after {
+    font-family: FontAwesome, sans-serif;
+    content: "\f002";
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+main{
+    margin: 0;
+}
+
+#wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 71px 0;
+    justify-content: center;
+}
+
+.single_album{
+    width: 348px;
+    height: 325px;
+    display: inline-flex;
+    position: relative;
+    opacity: 0.85;
+    margin: 31px 10px 10px 10px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album{
+    width: 300px;
+    height: 300px;
+}
+
+.album img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.album_spin{
+    -webkit-animation: spin 1s 1 linear;
+}
+
+.single_album .album_center{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 123px;
+    left: 146px;
+
+}
+
+.single_album:hover{
+    opacity: 1;
+    transition: .4s;
+}
+
+.single_album:hover .album-buttons{
+    opacity: 1;
+    transition: .4s;
+}
+
+.album_center h1.arc{
+    position: absolute;
+    top: -183px;
+    left: -131px;
+}
+
+div.not_arc{
+    position: absolute;
+    top: -197px;
+    left: -130px;
+    width: 300px;
+    text-align: center;
+}
+
+div.not_arc h1{
+    word-wrap: break-word;
+    font: 23px 'Fjalla One', MonoSpace;
+    text-shadow: 1px 2px 5px;
+}
+
+h1 span{
+    font: 23px 'Fjalla One', MonoSpace;
+    text-shadow: 1px 2px 5px;
+    height: 180px;
+    position: absolute;
+    width: 20px;
+    left: 150px;
+    top: 10px;
+    transform-origin: bottom center;
+}
+
+.album-buttons{
+    display: flex;
+    width: 92px;
+    height: 162px;
+    position: absolute;
+    opacity: 0;
+    bottom: 123px;
+    left: 127px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.albumTrash,
+.album-pencil{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    color: #000000;
+    background-color: silver;
+    border: 1px solid;
+    border-radius: 50%;
+    font-size: 21px;
+    justify-content: center;
+    align-items: center;
+    opacity: .65;
+}
+
+.album-play{
+    display: flex;
+    box-sizing: border-box;
+    width: 54px;
+    height: 54px;
+    background-color: silver    ;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 29px;
+    color: #000;
+    align-self: flex-end;
+    text-indent: 17px;
+    align-items: center;
+    opacity: .65;
+}
+
+
+#main-player {
+    display: none;
+    background-color: #f9e122;
+    width: 700px;
+    height: 337px;
+    position: relative;
+    border-radius: 192px;
+    margin: 69px auto;
+}
+
+.col{
+    height: 100%;
+    width: 50%;
+}
+
+.left{
+    float: left;
+}
+
+#main-player .album{
+    position: relative;
+    top: 19px;
+    left: 20px;
+}
+
+.spin-active{
+    -webkit-animation: spin 4s infinite linear ;
+}
+
+#main-player .album_center{
+    width: 54px;
+    height: 54px;
+    background-color: #f9e122;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 123px;
+    left: 123px;
+}
+
+.player-play{
+    display: flex;
+    text-indent: 16px;
+    align-items: center;
+    font-size: 29px;
+}
+
+.player-pause{
+    display: none;
+    font-size: 27px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.player-play,
+.player-pause{
+    cursor: pointer;
+    position: absolute;
+    box-sizing: border-box;
+    width: 54px;
+    height: 54px;
+    background-color: #f9e122;
+    border: 2px solid;
+    border-radius: 50%;
+    color: #000;
+}
+
+.right{
+    float: right;
+}
+
+audio{
+    margin-top: 20px;
+    margin-right: 105px;
+    float: right;
+    width: 300px;
+
+}
+
+.right h3{
+    font-family: "Comic Sans MS";
+    font-style: italic;
+    font-weight: bold;
+    margin: 56px 0 0;
+    font-size: 20px;
+    width: 280px;
+    height: 35px;
+}
+
+#ol_playlist{
+    list-style-position: inside;
+    margin-left: -27px;
+    margin-top: 0;
+    width: 289px;
+    height: 172px;
+    overflow-y: auto;
+}
+
+.li_track{
+    color: black;
+    font-family: "Comic Sans MS";;
+    font-size: 15px;
+    margin-top: 1px;
+}
+
+.li_track:hover{
+    cursor: pointer;
+}
+
+.active{
+    list-style: none;
+}
+
+.active:before {
+    font-family: FontAwesome, sans-serif;
+    content: "\f04b";
+    font-size: 17px;
+    display: inline-block;
+    margin-right: 6px;
+    width: 1.2em;
+    color: #F92922;
+}
+
+.icon-edit{
+    font-size: 25px;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: silver;
+    border-radius: 50%;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.65;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-close{
+    font-size: 25px;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: silver;
+    border-radius: 50%;
+    color: black;
+    top: -19px;
+    left: -20px;
+    opacity: 0.65;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+.player-play:hover,
+.player-pause:hover,
+.albumTrash:hover,
+.album-pencil:hover,
+.album-play:hover,
+.icon-edit:hover,
+.icon-close:hover{
+    opacity: 1;
+    color: #fd7209;
+    transition: .4s;
+    cursor: pointer;
+}
+
+
+#fancy-box{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#addPlayList,
+#dialog{
+    display: none;
+    background-color: white;
+    width: 550px;
+    margin: 200px auto 0;
+    padding: 20px;
+}
+
+#dialog{
+    height: 263px;
+}
+
+#addPlayList>h1,
+#dialog>h1{
+    display: block;
+    font-family: "Guttman Yad-Light";
+    font-style: italic;
+    font-weight: bold;
+    color: darkviolet;
+    font-size: 24px;
+    border-bottom: 2px solid grey;
+    margin-top: 0;
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+}
+
+#dialog .icon-close1 {
+    cursor: pointer;
+    font-size: 25px;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: silver;
+    border-radius: 50%;
+    color: black;
+    top: 32%;
+    left: 86%;
+    opacity: 0.65;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#addPlayList .icon-close2{
+    cursor: pointer;
+    font-size: 25px;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: silver;
+    border-radius: 50%;
+    color: black;
+    top: 32%;
+    left: 86%;
+    opacity: 0.65;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#details,
+#pic{
+    display: inline-block;
+}
+
+#details{
+    width: 270px;
+    height: 221px;
+}
+
+#details h4{
+    font-family: "Guttman Yad-Light";
+    font-style: italic;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+#details input{
+    display: inherit;
+    width: 230px;
+    height: 22px;
+}
+
+#save{
+    margin-top: 13px;
+    display: inline-block;
+}
+
+#reset{
+    margin-left: 24px;
+}
+
+.add-album-buttons{
+    display: inline-block;
+    width: 120px;
+    height: 34px;
+    background-color: firebrick;
+    font-family: "Comic Sans MS";
+    font-style: italic;
+    color: white;
+    font-size: 17px;
+    box-shadow: 0 0 6px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.add-album-buttons:active{
+    background-color: #FF9900;
+}
+
+#pic{
+    position: relative;
+    float: right;
+    margin-top: 23px;
+    width: 200px;
+    height: 200px;
+    background-color: #D5DDDD;
+}
+
+#img1{
+    width: 200px;
+    height: 200px;
+}
+
+#pic h1{
+    transform: rotate(45deg);
+    color: white;
+    position: absolute;
+    bottom: 62px;
+    right: 39px;
+}
+
+#addPlayList{
+    max-height: 373px;
+    box-sizing: border-box;
+    width: 592px;
+}
+
+#inputs{
+    max-height: 233px;
+    overflow-y: auto;
+    width: 552px;
+}
+
+.regexInvalid{
+    background-color: red;
+}
+
+#addPlayList h1{
+    font-family: Oswald, sans-serif;
+    font-size: large;
+}
+
+#addPlayList .song-url{
+    margin-right: 38px;
+}
+
+#addPlayList label{
+    font-family: "Guttman Yad-Light";
+    font-style: italic;
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+
+.song-name,
+.song-url{
+    line-height: 28px;
+}
+
+.song-input,
+.song-input{
+    width: 84%;
+    float: right;
+}
+
+#addSong{
+    display: inline-block;
+    width: 143px;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-style: italic;
+    font-weight: bold;
+    font-size: 13.5px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#addSong:before{
+    font-family: FontAwesome, sans-serif;
+    content: "\f055";
+    color: black;
+    font-style: italic;
+    margin-right: 4px;
+    font-size: 21px;
+}
+
+#addSong:hover{
+    box-shadow: 0 0 6px;
+    transition: .4s;
+}
+
+#finishAndSave {
+    float: right;
+    margin-left: 281px;
+}
+
+
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+
+@media ( max-width: 436px ) {
+    header{
+        justify-content: space-around;
+        flex-direction: column-reverse;
+    }
+
+    #search{
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    #add-span{
+        margin:0 15px 6px 15px;
+    }
+
+    #main-player {
+        width: 337px;
+        height: 700px;
+    }
+
+    .col{
+        height: 50%;
+        width: 100%;
+        float: none;
+    }
+
+    audio{
+        float: none;
+        margin-left: 18px;
+    }
+
+    .right h3 {
+        margin: 8px 0 0 10px;
+    }
+}

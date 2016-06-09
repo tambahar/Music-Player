@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Oswald|Acme|Fjalla+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <span id="add-span"><button id="add-album"><p>Add new album</p></button></span>
+
+    <span id="search">
+        <input id="search-album" type="search" placeholder="Search Album">
+    </span>
+</header>
+
+<main>
+    <div id="main-player">
+
+    </div>
+
+    <div  id="wrapper">
+
+    </div>
+
+    <div id="fancy-box">
+        <div id="dialog">
+            <h1 class="addNewAlbum"></h1>
+            <span class="icon-close1"><i class="fa fa-times"></i> </span>
+            <div id="details">
+                <h4>Album Name</h4>
+                <input type="text" class="clear-input album_input" name="album_name" placeholder="Album Name">
+                <h4>Artist Name:</h4>
+                <input type="text" class="clear-input album_input" name="album_artist" placeholder="Artist Name">
+                <h4>Img URL</h4>
+                <input type="text" class="clear-input album_input" name="album_image" placeholder="https://___________.jpg">
+                <span id="save" class="add-album-buttons">Save</span>
+                <span id="reset" class="add-album-buttons">Reset Fields</span>
+            </div>
+            <div id="pic">
+                <img src="" id="img1">
+                <h1>Preview</h1>
+            </div>
+        </div>
+        <div id="addPlayList">
+            <h1  class="addP"></h1>
+            <span class="icon-close2"><i class="fa fa-times"></i> </span>
+            <div id="inputs"></div>
+            <span id="addSong">Add Another Song</span>
+            <span id="finishAndSave" class="add-album-buttons">Finish & Save</span>
+        </div>
+    </div>
+</main>
+<script src="App/jquery-2.2.0.js"></script>
+<script src="App/FancyBox.js"></script>
+<script src="App/Player/MusicPlayer.js"></script>
+<script src="App/Player/Player.js"></script>
+<script src="App/DataService.js"></script>
+<script src="App/Templates.js"></script>
+<script src="App/View.js"></script>
+<script src="App/App.js"></script>
+</body>
+</html>
